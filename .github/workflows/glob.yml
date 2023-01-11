@@ -16,6 +16,6 @@ jobs:
         id: glob-all-js
         with:
           files: |
-            **/*
+            **/*.js
       - name: Echo all the JS files in the repository
         run: echo ${{ steps.glob-all-js.outputs.files }}
