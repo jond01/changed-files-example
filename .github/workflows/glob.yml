@@ -1,0 +1,21 @@
+name: List JS files
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  glob-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: tj-actions/glob@v16.8
+        id: glob-all-js
+        with:
+          files: |
+            **.js
+      - name: Echo all the JS files in the repository
+        run: echo ${{ steps.glob-all-js.outputs.files }}
