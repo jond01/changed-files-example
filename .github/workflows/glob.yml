@@ -18,4 +18,4 @@ jobs:
           files: |
             **.js
       - name: Echo all the JS files in the repository
-        run: echo ${{ steps.glob-all-js.outputs.files }}
+        run: echo ${{ steps.glob-all-js.outputs.paths }}
